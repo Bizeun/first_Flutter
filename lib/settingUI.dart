@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/cardTime.dart';
 
-void msettingUI() {
+void main() {
   runApp(const App());
 }
 
