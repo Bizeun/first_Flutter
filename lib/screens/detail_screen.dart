@@ -7,6 +7,7 @@ import 'package:toonflix/widgets/episode_widget.dart';
 
 class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
+
   const DetailScreen({
     super.key,
     required this.title,
@@ -90,9 +91,6 @@ class _DetailScreenState extends State<DetailScreen> {
           padding: const EdgeInsets.all(50),
           child: Column(
             children: [
-              const SizedBox(
-                height: 50,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -3,63 +3,9 @@ import 'package:toonflix/models/webtoon_model.dart';
 import 'package:toonflix/services/api_service.dart';
 import 'package:toonflix/widgets/webtoon_widget.dart';
 
-class DetailScreen extends StatelessWidget {
-  final String title, thumb, id;
-  const DetailScreen({
-    super.key,
-    required this.title,
-    required this.thumb,
-    required this.id,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 2,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.green,
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 24,
-          ),
-        ),
-      ),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 250,
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 15,
-                      offset: const Offset(10, 10),
-                      color: Colors.black.withOpacity(0.3),
-                    )
-                  ],
-                ),
-                child: Image.network(thumb),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class HomeUI extends StatelessWidget {
   HomeUI({super.key});
+
   final Future<List<WebtoonModel>> webtoons = ApiService
       .getTodaysToons(); //not using StatefulWidget and setState in fetching
   @override
